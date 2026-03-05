@@ -133,13 +133,14 @@ function addToCart(product) {
 const products = [
   {
     id:       'p001',
-    name:     'Industrial Hard Hat – Class E',
+    name:     'Industrial Hard Hat \u2013 Class E',
     category: 'Head Protection',
     price:    14900,
     oldPrice: 18900,
     badge:    'Sale',
     badgeType:'sale',
     icon:     'ri-hard-drive-line',
+    image:    'HeadProtection/IndustrialHardHat\u2013ClassE.jpg',
   },
   {
     id:       'p002',
@@ -150,6 +151,7 @@ const products = [
     badge:    'Best Seller',
     badgeType:'',
     icon:     'ri-eye-line',
+    image:    'EyeFaceProtection/Anti-FogSafetyGoggles.jpg',
   },
   {
     id:       'p003',
@@ -160,6 +162,7 @@ const products = [
     badge:    null,
     badgeType:'',
     icon:     'ri-hand-coin-line',
+    image:    'HandProtection/Cut-ResistantWorkGloves.jpg',
   },
   {
     id:       'p004',
@@ -170,6 +173,7 @@ const products = [
     badge:    'New',
     badgeType:'',
     icon:     'ri-lungs-line',
+    image:    'RespiratoryProtection/N95ParticulateRespirator.jpg',
   },
   {
     id:       'p005',
@@ -180,16 +184,18 @@ const products = [
     badge:    'Sale',
     badgeType:'sale',
     icon:     'ri-run-line',
+    image:    'SafetyFootwear/SteelToeSafetyBoot.jpg',
   },
   {
     id:       'p006',
-    name:     'Hi-Vis Safety Vest – Class 2',
+    name:     'Hi-Vis Safety Vest \u2013 Class 2',
     category: 'Workwear',
     price:    17900,
     oldPrice: null,
     badge:    'Best Seller',
     badgeType:'',
     icon:     'ri-shirt-line',
+    image:    'WorkWear/Hi-VisSafetyVest\u2013Class2.jpg',
   },
   {
     id:       'p007',
@@ -200,16 +206,18 @@ const products = [
     badge:    null,
     badgeType:'',
     icon:     'ri-user-line',
+    image:    'FallProtection/FullBodySafetyHarness.jpg',
   },
   {
     id:       'p008',
-    name:     'Disposable Coverall – Type 5/6',
+    name:     'Disposable Coverall \u2013 Type 5/6',
     category: 'Workwear',
     price:    6500,
     oldPrice: null,
     badge:    'New',
     badgeType:'',
     icon:     'ri-shirt-line',
+    image:    'DisposableCoverall/DisposableCoverall\u2013Type5-6.jpg',
   },
 ];
 
@@ -219,7 +227,10 @@ function renderProducts() {
   grid.innerHTML = products.map(p => `
     <div class="product-card">
       <div class="product-image">
-        <i class="${p.icon} product-icon"></i>
+        ${p.image
+          ? `<img src="${encodeURI(p.image)}" alt="${escapeHtml(p.name)}" class="product-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" /><i class="${p.icon} product-icon" style="display:none"></i>`
+          : `<i class="${p.icon} product-icon"></i>`
+        }
         ${p.badge ? `<span class="product-badge ${p.badgeType}">${escapeHtml(p.badge)}</span>` : ''}
       </div>
       <div class="product-info">
