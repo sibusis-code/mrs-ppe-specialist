@@ -110,6 +110,19 @@ input, select, textarea, button { font-family: inherit; }
   border-color: var(--clr-white);
 }
 
+.btn-whatsapp {
+  background: #25d366;
+  color: #fff;
+  border-color: #25d366;
+  font-weight: 700;
+}
+.btn-whatsapp:hover {
+  background: #1ebe5d;
+  border-color: #1ebe5d;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
 /* ===================================================
    NAVBAR
    =================================================== */
@@ -1139,6 +1152,12 @@ input, select, textarea, button { font-family: inherit; }
   font-size: 0.9rem;
 }
 .cart-total strong { font-size: 1.15rem; color: var(--clr-primary); }
+.cart-total-note {
+  font-size: 0.78rem;
+  color: var(--clr-text-muted, #888);
+  margin-bottom: 12px;
+  text-align: center;
+}
 
 /* ===================================================
    WHATSAPP FLOAT

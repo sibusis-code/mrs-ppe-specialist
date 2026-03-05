@@ -44,6 +44,11 @@ mobileMenu.querySelectorAll('a').forEach(link => {
   });
 });
 
+// ── WhatsApp config ───────────────────────────────────────
+// TODO: Replace with the actual business WhatsApp number before deploying
+const WA_NUMBER            = '27000000000';
+const WA_REDIRECT_DELAY_MS = 600; // ms before opening WhatsApp tab (lets button animate)
+
 // ── Cart ──────────────────────────────────────────────────
 let cart = JSON.parse(localStorage.getItem('mrsppe_cart') || '[]');
 
@@ -114,7 +119,35 @@ function renderCart() {
         renderCart();
       });
     });
+
+    document.getElementById('cartWhatsAppBtn').addEventListener('click', sendCartToWhatsApp);
   }
+}
+
+function buildCartWhatsAppMessage() {
+  const lines = cart.map(item => {
+    const lineTotal = formatPrice(item.price * item.qty);
+    return `• ${item.name} × ${item.qty}  @  ${formatPrice(item.price)} ea  =  ${lineTotal}`;
+  });
+  const total = formatPrice(cart.reduce((sum, item) => sum + item.price * item.qty, 0));
+  return [
+    'Hello Mrs PPE Specialist! 🛡️',
+    '',
+    'I would like to request a quote for the following items:',
+    '',
+    ...lines,
+    '',
+    `*TOTAL: ${total}*`,
+    '',
+    'Please confirm availability and final pricing. Thank you!',
+  ].join('\n');
+}
+
+function sendCartToWhatsApp() {
+  if (cart.length === 0) return;
+  const message = buildCartWhatsAppMessage();
+  const url = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
+  window.open(url, '_blank', 'noopener,noreferrer');
 }
 
 function addToCart(product) {
@@ -271,18 +304,39 @@ quoteForm.addEventListener('submit', (e) => {
     return;
   }
 
-  // Simulate form submission (replace with real fetch/API call)
+  const fname   = quoteForm.fname.value.trim();
+  const lname   = quoteForm.lname.value.trim();
+  const email   = quoteForm.email.value.trim();
+  const company = quoteForm.company.value.trim();
+  const product = quoteForm.product.value.trim();
+  const message = quoteForm.message.value.trim();
+
+  const lines = [
+    'Hello Mrs PPE Specialist! 🛡️',
+    '',
+    `*Quote Request from ${fname} ${lname}*`,
+    email   ? `📧 Email: ${email}`   : null,
+    company ? `🏢 Company: ${company}` : null,
+    product ? `🛒 Product/Category: ${product}` : null,
+    message ? `📝 Requirements: ${message}` : null,
+    '',
+    'Please send me a quote at your earliest convenience. Thank you!',
+  ].filter(line => line !== null).join('\n');
+
+  const waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(lines)}`;
+
   const submitBtn = quoteForm.querySelector('[type="submit"]');
   submitBtn.disabled = true;
-  submitBtn.innerHTML = '<i class="ri-loader-4-line"></i> Sending…';
+  submitBtn.innerHTML = '<i class="ri-loader-4-line"></i> Opening WhatsApp…';
 
   setTimeout(() => {
+    window.open(waUrl, '_blank', 'noopener,noreferrer');
     quoteForm.reset();
     submitBtn.disabled = false;
-    submitBtn.innerHTML = 'Send Quote Request <i class="ri-send-plane-line"></i>';
+    submitBtn.innerHTML = 'Send Quote via WhatsApp <i class="ri-whatsapp-line"></i>';
     formSuccess.classList.remove('hidden');
     setTimeout(() => formSuccess.classList.add('hidden'), 6000);
-  }, 1400);
+  }, WA_REDIRECT_DELAY_MS);
 });
 
 // ── Smooth scroll for anchor links ───────────────────────

@@ -371,11 +371,11 @@
           <label for="message">Message / Requirements</label>
           <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirements, quantities, etc."></textarea>
         </div>
-        <button type="submit" class="btn btn-primary btn-lg btn-full">
-          Send Quote Request <i class="ri-send-plane-line"></i>
+        <button type="submit" class="btn btn-whatsapp btn-lg btn-full">
+          Send Quote via WhatsApp <i class="ri-whatsapp-line"></i>
         </button>
         <p class="form-success hidden" id="formSuccess">
-          <i class="ri-checkbox-circle-fill"></i> Thank you! We'll be in touch within 24 hours.
+          <i class="ri-checkbox-circle-fill"></i> WhatsApp is opening with your quote details — we'll reply fast!
         </p>
       </form>
     </div>
@@ -461,7 +461,10 @@
         <span>Total</span>
         <strong id="cartTotal">R0.00</strong>
       </div>
-      <a href="#contact" class="btn btn-primary btn-full">Request Quote / Checkout <i class="ri-arrow-right-line"></i></a>
+      <p class="cart-total-note">Prices shown are estimates. Final pricing confirmed on WhatsApp.</p>
+      <button class="btn btn-whatsapp btn-full" id="cartWhatsAppBtn">
+        <i class="ri-whatsapp-line"></i> Send Quote via WhatsApp
+      </button>
     </div>
   </aside>
 
