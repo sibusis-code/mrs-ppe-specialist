@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mrs PPE Specialist – Premium PPE & Safety Wear</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <!-- Remix Icon CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <nav class="nav-container">
+
+      <!-- Left: Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li class="dropdown">
+          <a href="#shop" class="nav-link">Shop <i class="ri-arrow-down-s-line"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Hard Hats & Helmets</a></li>
+            <li><a href="#">Safety Vests</a></li>
+            <li><a href="#">Gloves & Hand Protection</a></li>
+            <li><a href="#">Eye & Face Protection</a></li>
+            <li><a href="#">Respiratory Protection</a></li>
+            <li><a href="#">Safety Footwear</a></li>
+            <li><a href="#">Workwear & Overalls</a></li>
+            <li><a href="#">All Products</a></li>
+          </ul>
+        </li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <!-- Center: Logo -->
+      <a href="#home" class="nav-logo">
+        <span class="logo-main">MrsPPE</span>
+        <span class="logo-sub">SPECIALIST</span>
+        <span class="logo-tagline">Safety & PPE Solutions</span>
+      </a>
+
+      <!-- Right: Actions -->
+      <div class="nav-actions">
+        <button class="nav-icon-btn" id="cartBtn" aria-label="Shopping cart">
+          <i class="ri-shopping-bag-3-line"></i>
+          <span class="cart-badge" id="cartCount">0</span>
+        </button>
+        <a href="#contact" class="btn btn-primary nav-cta">Get a Quote</a>
+        <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#contact" class="btn btn-primary">Get a Quote</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="home">
+    <!-- Decorative background circles -->
+    <span class="hero-circle circle-1"></span>
+    <span class="hero-circle circle-2"></span>
+    <span class="hero-circle circle-3"></span>
+    <span class="hero-dot-grid"></span>
+
+    <div class="hero-content">
+      <p class="hero-eyebrow"><span class="eyebrow-line"></span> PREMIUM PPE & SAFETY SOLUTIONS</p>
+      <h1 class="hero-heading">
+        Safety First.<br />
+        <span class="hero-heading-accent">Unmatched<br />Quality.</span>
+      </h1>
+      <p class="hero-subtext">
+        From procurement to delivery, we supply certified PPE and safety wear that protects your workforce across every industry.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary btn-lg">Get a Quote <i class="ri-arrow-right-line"></i></a>
+        <a href="#shop" class="btn btn-outline btn-lg">Shop Now</a>
+      </div>
+      <p class="hero-badge"><span class="badge-line"></span> 100% BLACK, FEMALE, YOUTH-OWNED</p>
+    </div>
+
+    <!-- Hero Image Placeholder -->
+    <div class="hero-image-wrap">
+      <div class="hero-image-bg"></div>
+      <img
+        src="hero-team.png"
+        alt="PPE Safety Team"
+        class="hero-img"
+        onerror="this.style.display='none'; document.querySelector('.hero-image-bg').classList.add('hero-image-fallback')"
+      />
+    </div>
+  </section>
+
+  <!-- ========== TRUST STRIP ========== -->
+  <section class="trust-strip">
+    <div class="trust-container">
+      <div class="trust-item">
+        <i class="ri-shield-check-line"></i>
+        <span>SABS Certified Products</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <i class="ri-truck-line"></i>
+        <span>Nationwide Delivery</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <i class="ri-group-line"></i>
+        <span>Bulk Order Specialists</span>
+      </div>
+      <div class="trust-divider"></div>
+      <div class="trust-item">
+        <i class="ri-customer-service-2-line"></i>
+        <span>Dedicated Support</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CATEGORIES SECTION ========== -->
+  <section class="categories" id="shop">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Browse by Category</p>
+        <h2 class="section-title">Everything You Need,<br /><span>All in One Place</span></h2>
+      </div>
+
+      <div class="categories-grid">
+        <a href="#" class="category-card">
+          <div class="category-icon-wrap" style="--cat-color: #0d5c4e;">
+            <i class="ri-hard-drive-line"></i>
+          </div>
+          <h3>Head Protection</h3>
+          <p>Hard hats, bump caps & helmets</p>
+          <span class="cat-link">Shop Now <i class="ri-arrow-right-line"></i></span>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-icon-wrap" style="--cat-color: #1a7a66;">
+            <i class="ri-eye-line"></i>
+          </div>
+          <h3>Eye & Face</h3>
+          <p>Goggles, visors & face shields</p>
+          <span class="cat-link">Shop Now <i class="ri-arrow-right-line"></i></span>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-icon-wrap" style="--cat-color: #0d5c4e;">
+            <i class="ri-hand-coin-line"></i>
+          </div>
+          <h3>Hand Protection</h3>
+          <p>Gloves for every work condition</p>
+          <span class="cat-link">Shop Now <i class="ri-arrow-right-line"></i></span>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-icon-wrap" style="--cat-color: #1a7a66;">
+            <i class="ri-lungs-line"></i>
+          </div>
+          <h3>Respiratory</h3>
+          <p>Masks, respirators & filters</p>
+          <span class="cat-link">Shop Now <i class="ri-arrow-right-line"></i></span>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-icon-wrap" style="--cat-color: #0d5c4e;">
+            <i class="ri-run-line"></i>
+          </div>
+          <h3>Safety Footwear</h3>
+          <p>Steel-toe boots & safety shoes</p>
+          <span class="cat-link">Shop Now <i class="ri-arrow-right-line"></i></span>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-icon-wrap" style="--cat-color: #1a7a66;">
+            <i class="ri-shirt-line"></i>
+          </div>
+          <h3>Workwear</h3>
+          <p>Overalls, vests & hi-vis clothing</p>
+          <span class="cat-link">Shop Now <i class="ri-arrow-right-line"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURED PRODUCTS ========== -->
+  <section class="featured-products">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">Top Sellers</p>
+        <h2 class="section-title">Featured <span>Products</span></h2>
+      </div>
+
+      <div class="products-grid" id="productsGrid">
+        <!-- Products injected by JS -->
+      </div>
+
+      <div class="view-all-wrap">
+        <a href="#shop" class="btn btn-outline btn-lg">View All Products <i class="ri-arrow-right-line"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== WHY US ========== -->
+  <section class="why-us" id="about">
+    <div class="section-container why-grid">
+      <div class="why-text">
+        <p class="section-eyebrow">Why Choose Us</p>
+        <h2 class="section-title">Your Trusted PPE<br /><span>Partner</span></h2>
+        <p class="why-body">
+          Mrs PPE Specialist is a 100% Black, Female, Youth-owned business dedicated to providing quality personal protective equipment and safety wear to businesses across South Africa. We understand that protecting your team is not optional — it's essential.
+        </p>
+        <ul class="why-list">
+          <li><i class="ri-checkbox-circle-fill"></i> Competitive pricing with bulk discounts</li>
+          <li><i class="ri-checkbox-circle-fill"></i> SABS-compliant & certified products</li>
+          <li><i class="ri-checkbox-circle-fill"></i> Fast, reliable nationwide delivery</li>
+          <li><i class="ri-checkbox-circle-fill"></i> Custom branding & embroidery available</li>
+          <li><i class="ri-checkbox-circle-fill"></i> Dedicated account manager support</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary btn-lg">Request a Quote <i class="ri-arrow-right-line"></i></a>
+      </div>
+
+      <div class="why-stats">
+        <div class="stat-card stat-accent">
+          <h3>500+</h3>
+          <p>Happy Clients</p>
+        </div>
+        <div class="stat-card">
+          <h3>1 200+</h3>
+          <p>Products Available</p>
+        </div>
+        <div class="stat-card">
+          <h3>9+</h3>
+          <p>Provinces Served</p>
+        </div>
+        <div class="stat-card stat-accent">
+          <h3>5★</h3>
+          <p>Customer Rating</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIALS ========== -->
+  <section class="testimonials">
+    <div class="section-container">
+      <div class="section-header">
+        <p class="section-eyebrow">What Our Clients Say</p>
+        <h2 class="section-title">Trusted by <span>Industry Leaders</span></h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          </div>
+          <p>"Mrs PPE Specialist delivered our entire safety wear order within 3 days. Premium quality and exactly what we needed for our construction sites."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">TM</div>
+            <div>
+              <strong>Thabo Mkhize</strong>
+              <span>Site Manager – BuildRight Construction</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i>
+          </div>
+          <p>"We've been ordering our hospital PPE from them for over a year. Reliable, affordable, and always SABS certified. Highly recommended!"</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">NP</div>
+            <div>
+              <strong>Nomvula Petersen</strong>
+              <span>Procurement – City Health Clinic</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">
+            <i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-half-fill"></i>
+          </div>
+          <p>"The custom branded safety vests were exactly what we envisioned. Great communication throughout and lightning fast delivery."</p>
+          <div class="testimonial-author">
+            <div class="author-avatar">JS</div>
+            <div>
+              <strong>Johan Swart</strong>
+              <span>Operations Director – LogiTrack SA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA BANNER ========== -->
+  <section class="cta-banner">
+    <div class="cta-circles">
+      <span></span><span></span>
+    </div>
+    <div class="section-container cta-content">
+      <h2>Need a Bulk Order or Custom Branding?</h2>
+      <p>Get a personalised quote in under 24 hours. We cater for businesses of all sizes.</p>
+      <div class="cta-buttons">
+        <a href="#contact" class="btn btn-white btn-lg">Get a Free Quote <i class="ri-arrow-right-line"></i></a>
+        <a href="https://wa.me/27000000000" class="btn btn-outline-white btn-lg" target="_blank" rel="noopener">
+          <i class="ri-whatsapp-line"></i> Chat on WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT SECTION ========== -->
+  <section class="contact" id="contact">
+    <div class="section-container contact-grid">
+      <div class="contact-info">
+        <p class="section-eyebrow">Get In Touch</p>
+        <h2 class="section-title">Request a <span>Quote</span></h2>
+        <p>Fill in the form and our team will get back to you within 24 hours with a competitive quote tailored to your needs.</p>
+        <ul class="contact-details">
+          <li><i class="ri-phone-line"></i> +27 (0) 00 000 0000</li>
+          <li><i class="ri-mail-line"></i> info@mrsppespecialist.co.za</li>
+          <li><i class="ri-map-pin-line"></i> Johannesburg, South Africa</li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="quoteForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">First Name *</label>
+            <input type="text" id="fname" name="fname" placeholder="Your first name" required />
+          </div>
+          <div class="form-group">
+            <label for="lname">Last Name *</label>
+            <input type="text" id="lname" name="lname" placeholder="Your last name" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="company">Company Name</label>
+          <input type="text" id="company" name="company" placeholder="Your company (optional)" />
+        </div>
+        <div class="form-group">
+          <label for="product">Product / Category *</label>
+          <select id="product" name="product" required>
+            <option value="">Select a product category…</option>
+            <option>Head Protection</option>
+            <option>Eye & Face Protection</option>
+            <option>Hand Protection / Gloves</option>
+            <option>Respiratory Protection</option>
+            <option>Safety Footwear</option>
+            <option>Workwear & Overalls</option>
+            <option>Multiple / Full PPE Kit</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message / Requirements</label>
+          <textarea id="message" name="message" rows="4" placeholder="Tell us about your requirements, quantities, etc."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-full">
+          Send Quote Request <i class="ri-send-plane-line"></i>
+        </button>
+        <p class="form-success hidden" id="formSuccess">
+          <i class="ri-checkbox-circle-fill"></i> Thank you! We'll be in touch within 24 hours.
+        </p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <span class="logo-main">MrsPPE</span>
+          <span class="logo-sub">SPECIALIST</span>
+        </div>
+        <p>Your trusted partner for premium PPE and safety wear solutions across South Africa.</p>
+        <p class="footer-ownership">100% Black, Female, Youth-Owned</p>
+        <div class="social-links">
+          <a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a>
+          <a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="ri-linkedin-fill"></i></a>
+          <a href="https://wa.me/27000000000" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="ri-whatsapp-line"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop</h4>
+        <ul>
+          <li><a href="#">Head Protection</a></li>
+          <li><a href="#">Eye & Face Protection</a></li>
+          <li><a href="#">Hand Protection</a></li>
+          <li><a href="#">Respiratory PPE</a></li>
+          <li><a href="#">Safety Footwear</a></li>
+          <li><a href="#">Workwear & Overalls</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#contact">Get a Quote</a></li>
+          <li><a href="#">Delivery Info</a></li>
+          <li><a href="#">Returns Policy</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul class="footer-contact-list">
+          <li><i class="ri-phone-line"></i> +27 (0) 00 000 0000</li>
+          <li><i class="ri-mail-line"></i> info@mrsppespecialist.co.za</li>
+          <li><i class="ri-map-pin-line"></i> Johannesburg, South Africa</li>
+          <li><i class="ri-time-line"></i> Mon–Fri: 08:00 – 17:00</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 Mrs PPE Specialist. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== CART SIDEBAR ========== -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button class="cart-close" id="cartClose"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <i class="ri-shopping-bag-3-line"></i>
+        <p>Your cart is empty</p>
+        <a href="#shop" class="btn btn-primary">Start Shopping</a>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">
+        <span>Total</span>
+        <strong id="cartTotal">R0.00</strong>
+      </div>
+      <a href="#contact" class="btn btn-primary btn-full">Request Quote / Checkout <i class="ri-arrow-right-line"></i></a>
+    </div>
+  </aside>
+
+  <!-- ========== WHATSAPP FLOAT ========== -->
+  <a href="https://wa.me/27000000000" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <i class="ri-whatsapp-line"></i>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>
