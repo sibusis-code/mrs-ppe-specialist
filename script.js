@@ -2,6 +2,11 @@
    Mrs PPE Specialist – Main Script
    =================================================== */
 
+// ⚙️ CONFIGURATION – UPDATE YOUR WHATSAPP NUMBER HERE
+// Format: country code + number (no + or spaces)
+// Example: South Africa +27 123 456 7890 becomes '27123456789'
+const WHATSAPP_NUMBER = '27635002390';  // 👈 CHANGE THIS TO YOUR ACTUAL NUMBER
+
 // ── Navbar scroll effect ──────────────────────────────────
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -77,6 +82,46 @@ function closeCart() {
 document.getElementById('cartBtn').addEventListener('click', openCart);
 document.getElementById('cartClose').addEventListener('click', closeCart);
 cartOverlay.addEventListener('click', closeCart);
+
+function generateWhatsAppMessage() {
+  const totalCents = cart.reduce((sum, item) => sum + item.price * item.qty, 0);
+  const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+  
+  let message = "NEW ORDER REQUEST - Mrs PPE Specialist\n\n";
+  message += "📦 Order Details:\n";
+  message += "━━━━━━━━━━━━━━━\n\n";
+  
+  cart.forEach((item, idx) => {
+    message += `${idx + 1}. *${item.name}*\n`;
+    message += `   Category: ${item.category}\n`;
+    message += `   Price: ${formatPrice(item.price)} × ${item.qty}\n`;
+    message += `   Subtotal: ${formatPrice(item.price * item.qty)}\n\n`;
+  });
+  
+  message += "━━━━━━━━━━━━━━━\n";
+  message += `📊 *Total Items:* ${totalQty}\n`;
+  message += `💰 *Estimated Total:* ${formatPrice(totalCents)}\n\n`;
+  message += "⚠️ *Note:* This is an initial quote. Final price will be confirmed on WhatsApp based on quantities, delivery location, and any special requirements.\n\n";
+  message += "Please reply to confirm your order and provide:\n";
+  message += "✓ Delivery address\n";
+  message += "✓ Company name (if applicable)\n";
+  message += "✓ Any special requirements\n\n";
+  message += "We'll respond with a detailed quote within 1 hour! 🚀";
+  
+  return encodeURIComponent(message);
+}
+
+function sendCartToWhatsApp() {
+  if (cart.length === 0) {
+    alert('Your cart is empty. Please add items before sending to WhatsApp.');
+    return;
+  }
+  
+  const message = generateWhatsAppMessage();
+  const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${message}`;
+  
+  window.open(whatsappUrl, '_blank');
+}
 
 function renderCart() {
   const totalCents = cart.reduce((sum, item) => sum + item.price * item.qty, 0);

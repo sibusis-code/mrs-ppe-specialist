@@ -458,10 +458,13 @@
     </div>
     <div class="cart-footer" id="cartFooter" style="display:none">
       <div class="cart-total">
-        <span>Total</span>
+        <span>Estimated Total</span>
         <strong id="cartTotal">R0.00</strong>
       </div>
-      <a href="#contact" class="btn btn-primary btn-full">Request Quote / Checkout <i class="ri-arrow-right-line"></i></a>
+      <p class="cart-note">💬 Final price confirmed on WhatsApp</p>
+      <button onclick="sendCartToWhatsApp()" class="btn btn-primary btn-full">
+        <i class="ri-whatsapp-line"></i> Send Quote to WhatsApp
+      </button>
     </div>
   </aside>
 
